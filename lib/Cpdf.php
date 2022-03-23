@@ -3701,7 +3701,7 @@ EOT;
      */
     function setColor($color, $force = false)
     {
-        $new_color = [$color[0], $color[1], $color[2], isset($color[3]) ? $color[3] : null];
+        $new_color = [@$color[0], @$color[1], @$color[2], @$color[3]];
 
         if (!$force && $this->currentColor == $new_color) {
             return;
@@ -3740,7 +3740,7 @@ EOT;
      */
     function setStrokeColor($color, $force = false)
     {
-        $new_color = [$color[0], $color[1], $color[2], isset($color[3]) ? $color[3] : null];
+        $new_color = [@$color[0], @$color[1], @$color[2], @$color[3]];
 
         if (!$force && $this->currentStrokeColor == $new_color) {
             return;
